@@ -42,12 +42,21 @@ ul.nav li.active a
     background-color: black !important;
 }
 
+div.list-group a:hover
+{
+    background-color: rgb(39, 26, 14);
+}
 div.list-group a
 {
     background-color: rgb(39, 26, 14);
     border-color: black;
     
     color: rgb(208, 194, 169);
+}
+div.list-group a.active:hover
+{
+    background-color: black;
+    border-color: black;
 }
 div.list-group a.active
 {
