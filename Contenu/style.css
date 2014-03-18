@@ -3,3 +3,58 @@
     Author     : p1002239
 */
 
+body
+{
+    background-color: rgb(220, 200, 200);
+}
+/*
+.navigation
+{
+    position: fixed;
+    
+    height: 40px;
+    width: 100%;
+    
+    padding: 10px;
+    
+    color: gray;
+    font-size: 15px;
+    
+    background-color: black;
+}*/
+
+nav.navbar
+{
+    background-color: rgb(39, 26, 14);
+    
+    border-color: rgb(39, 26, 14);
+    /*border-bottom-color: orange;*/
+    
+}
+
+a.navbar-brand,
+ul.nav a
+{
+    color: rgb(208, 194, 169) !important;
+}
+ul.nav li.active a
+{
+    background-color: black !important;
+}
+
+div.list-group a
+{
+    background-color: rgb(39, 26, 14);
+    border-color: black;
+    
+    color: rgb(208, 194, 169);
+}
+div.list-group a.active
+{
+    background-color: black;
+    border-color: black;
+    
+    color: rgb(208, 194, 169);
+    
+    font-weight: bold;
+}
