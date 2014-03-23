@@ -1,69 +1,51 @@
 /* 
     Created on : 18 mars 2014, 16:35:57
-    Author     : p1002239
+    Author     : Adrien Castex et Arnaud Orgelet
 */
+
+html,
+body
+{
+  /* Cacher en responsive avec petit format */
+  overflow-x: hidden;
+}
 
 body
 {
-    background-color: rgb(220, 200, 200);
-}
-/*
-.navigation
-{
-    position: fixed;
-    
-    height: 40px;
-    width: 100%;
-    
-    padding: 10px;
-    
-    color: gray;
-    font-size: 15px;
-    
-    background-color: black;
-}*/
-
-nav.navbar
-{
-    background-color: rgb(39, 26, 14);
-    
-    border-color: rgb(39, 26, 14);
-    /*border-bottom-color: orange;*/
-    
+  padding-top: 70px;
+  
+  background-color: rgb(220, 200, 200);
 }
 
-a.navbar-brand,
-ul.nav a
+
+
+.main-frame
 {
-    color: rgb(208, 194, 169) !important;
+    text-align: center;
 }
-ul.nav li.active a
+.main-frame img
 {
-    background-color: black !important;
+    display: inline-block;
 }
 
-div.list-group a:hover
+#sidebar .active
 {
-    background-color: rgb(39, 26, 14);
+    background-color: #101010;
+    border-color: #101010;
 }
-div.list-group a
+
+button[data-toggle=offcanvas]:active,
+button[data-toggle=offcanvas]:visited,
+button[data-toggle=offcanvas]:focus,
+button[data-toggle=offcanvas]
 {
-    background-color: rgb(39, 26, 14);
-    border-color: black;
+    background-color: #101010;
+    border-color: #101010;
     
-    color: rgb(208, 194, 169);
+    outline-style: none;
 }
-div.list-group a.active:hover
+button[data-toggle=offcanvas]:hover
 {
-    background-color: black;
-    border-color: black;
-}
-div.list-group a.active
-{
-    background-color: black;
-    border-color: black;
-    
-    color: rgb(208, 194, 169);
-    
-    font-weight: bold;
+    background-color: #404040;
+    border-color: #404040;
 }
