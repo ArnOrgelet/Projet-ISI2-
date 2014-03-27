@@ -27,30 +27,8 @@
             <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 	      <div class="container">
 	        <div class="navbar-header">
-	          <!-- Bouton de déroulement -->
-	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	            <span class="sr-only">Menu</span>
-	            <!-- Aspect graphique du bouton -->
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
 	          <!-- Titre sur le bandeau -->
-	          <a class="navbar-brand" href="index.html">Le Jardin Du Chocolat</a>
-	        </div>
-	        <div class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav">
-	          	<!-- Menu du bandeau -->
-	            <li class="active">
-	            	<a href="index.html">Accueil</a>
-	            </li>
-	            <li>
-	            	<a href="">A propos</a>
-	            </li>
-	            <li>
-	            	<a href="">Contact</a>
-	            </li>
-	          </ul>
+	          <a class="navbar-brand" href="index.php">Le Jardin Du Chocolat</a>
 	        </div>
 	      </div>
 	    </div>
@@ -58,23 +36,12 @@
             <!-- Partie inférieure au bandeau -->
 	    <div class="container">
 	    
-	      <!-- Fil d'Ariane -->
-	      <ul class="breadcrumb">
-	        <!-- Parent -->
-	        <!--
-                  <li><a href="#">Parent</a> <span class="divider"></span></li>
-                -->
-                <li class="active">Accueil</li>
-              </ul>
+              <?= $contenu ?>
 	
-	      <div class="row row-offcanvas row-offcanvas-left">
-                  <?= $contenu ?>
-	      </div>
-	
-		  <!-- Séparateur -->
+              <!-- Séparateur -->
 	      <hr>
 	
-		  <!-- Pied de page -->
+              <!-- Pied de page -->
 	      <footer>
 	        <p>&copy; Castex-Orgelet 2014</p>
 	      </footer>
