@@ -9,22 +9,12 @@
   <!--
     <li><a href="#">Parent</a> <span class="divider"></span></li>
   -->
-  <li class="active">Accueil</li>
+  <li class="active glyphicon glyphicon-home"><span class="glyphicon glyphicon-home"> Accueil</span></li>
 </ul>
 
 <div class="row row-offcanvas row-offcanvas-left">
 
-    <!-- Menu de gauche -->
-    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-      <div class="list-group">
-        <?php foreach ($categories as $categorie): ?>
-            <a href="#" title="<?= trim($categorie['titre']) ?>" class="list-group-item"> <!-- active -->
-                <span><?= trim($categorie['titre']) ?></span>
-                <span class="badge"><?= trim($categorie['nb']) ?></span>
-            </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
+    <?php include_once('Vue/_Commun/menuNavigation.php'); ?>
 
     <!-- Partie principale de la page : le contenu -->
     <div class="col-xs-12 col-sm-9">

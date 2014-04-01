@@ -2,12 +2,14 @@
 
 <html lang="en">
 	<head>
+                <base href="<?= $racineWeb ?>">
+                
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Vendeur de chocolat depuis 1930">
 		<meta name="author" content="Castex & Orgelet">
-		
+                
 		<link rel="shortcut icon" href="Contenu/Images/icon.ico">
 		
 		<title>Le Jardin Du Chocolat - <?= $titre ?></title>
@@ -28,7 +30,7 @@
 	      <div class="container">
 	        <div class="navbar-header">
 	          <!-- Titre sur le bandeau -->
-	          <a class="navbar-brand" href="index.php">Le Jardin Du Chocolat</a>
+	          <a class="navbar-brand" href="<?= $racineWeb ?>">Le Jardin Du Chocolat</a>
 	        </div>
 	      </div>
 	    </div>
