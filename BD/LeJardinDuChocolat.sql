@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `t_chocolat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 
-INSERT INTO `lejardinduchocolat`.`t_categorie` (`CAT_ID`, `CAT_NOM`, `CAT_DESC`) VALUES (NULL, 'Ganache', 'La ganache est délicieux.'), (NULL, 'Praliné', 'La praline est né en 1930, etc...'), (NULL, 'Chocolat classique', 'Le chocolat classique, basique, il n''y a que ça de vrai.');
+INSERT INTO `lejardinduchocolat`.`t_categorie` (`CAT_ID`, `CAT_NOM`, `CAT_DESC`) VALUES (NULL, 'Ganache', 'La ganache est délicieux.'), (NULL, 'Praliné', 'La praline est née en 1930, etc...'), (NULL, 'Chocolat classique', 'Le chocolat classique, basique, il n''y a que ça de vrai.');
 
 INSERT INTO `lejardinduchocolat`.`t_chocolatier` (`CHT_ID`, `CHT_NOM`, `CHT_ADRESSE`, `CHT_TEL`, `CHT_EMAIL`) VALUES (NULL, 'Richart', '258 boulevard Saint-Germain 75007 Paris 7ème', '01 45 55 66 00', 'contact@richart.fr'), (NULL, 'Sève chocolatier', '29 quai Saint Antoine 69002 Lyon 2ème arr', '04 78 37 67 81', 'contact@sevechocolatier.fr'), (NULL, 'Délices des sens', '12 boulevard des Brotteaux 69006 Lyon 6ème arr', '04 78 24 48 25', 'contact@delices.fr');
 

@@ -19,11 +19,17 @@ class ControleurNavigation extends Controleur
   // Affiche la liste de toutes les categories
   public function index()
   {
-    $idCategorie = $this->requete->getParametre("id");
-    
+    $categorie = null;
+    $chocolats = null;
+      
     $categories = $this->categorie->getCategories();
-    $categorie = $this->categorie->getCategorie($idCategorie);
-    $chocolats = $this->chocolat->getChocolats($idCategorie);
+    if ($this->requete->existeParametre("id"))
+    {
+        $idCategorie = $this->requete->getParametre("id");
+        
+        $categorie = $this->categorie->getCategorie($idCategorie);
+        $chocolats = $this->chocolat->getChocolats($idCategorie);
+    }
     
     $this->genererVue(array(
                         'currentCategorie' => $categorie,

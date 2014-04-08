@@ -11,7 +11,7 @@ class Categorie extends Modele
     $sql = 'select CA.CAT_ID as id, CAT_NOM as titre,'
         . ' CAT_DESC as description, count(ch.CAT_ID) as nb'
         . ' from T_CATEGORIE CA'
-        . ' inner join T_CHOCOLAT CH on CH.CAT_ID = CA.CAT_ID'
+        . ' left outer join T_CHOCOLAT CH on CH.CAT_ID = CA.CAT_ID'
         . ' GROUP BY id'
         . ' order by titre asc';
     

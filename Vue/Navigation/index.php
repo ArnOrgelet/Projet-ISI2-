@@ -1,11 +1,20 @@
-<?php $this->titre = $currentCategorie['titre']; ?>
+<?php
+    if(isset($currentCategorie['titre']))
+        $this->titre = $this->nettoyer($currentCategorie['titre']);
+    else
+        $this->titre = 'Categories de chocolat';
+?>
 
 
 
 <!-- Fil d'Ariane -->
 <ul class="breadcrumb">
-    <li><a href="accueil"><span class="glyphicon glyphicon-home"> Accueil</span></a> <span class="divider"></span></li>
-    <li class="active"><span class="glyphicon glyphicon-leaf"> <?= $currentCategorie['titre'] ?></span></li>
+    <li><span class="glyphicon glyphicon-home"></span> <a href="accueil">Accueil</a> <span class="divider"></span></li>
+    <?php if(isset($currentCategorie['titre'])) : ?>
+        <li class="active"><span class="glyphicon glyphicon-leaf"></span> <?= $this->nettoyer($currentCategorie['titre']) ?></li>
+    <?php else : ?>
+        <li class="active"><span class="glyphicon glyphicon-leaf"></span> Categories</li>
+    <?php endif; ?>
 </ul>
 
 <div class="row row-offcanvas row-offcanvas-left">
@@ -21,32 +30,32 @@
       
       <!-- Partie textuelle de bienvenu -->
       <div class="jumbotron main-frame">
-        <br>
-        
-        <?php foreach ($chocolats as $chocolat): ?>
-          <div class="row">
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="Contenu/Images/main_pic.jpg" alt="Bonjour">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="Contenu/Images/main_pic.jpg" alt="Bonjour">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="Contenu/Images/main_pic.jpg" alt="Bonjour">
-              </a>
-            </div>
-            <div class="col-xs-6 col-md-3">
-              <a href="#" class="thumbnail">
-                <img src="Contenu/Images/main_pic.jpg" alt="Bonjour">
-              </a>
-            </div>
+          
+        <?php if(isset($currentCategorie['titre'])) : ?>
+          <?php if($chocolats->rowCount() > 0) : ?>
+            <br>
+
+            <?php foreach ($chocolats as $index => $chocolat): ?>
+              <?= ($index % 4 == 0 ? '<div class="row">' : '' ) ?>
+                <div class="col-xs-6 col-md-3">
+                  <a href="#" class="thumbnail">
+                    <img src="Contenu/Images/Chocolats/<?= $this->nettoyer($chocolat['image_src']) ?>.jpg"
+                         title="<?= $this->nettoyer($chocolat['nom']) ?>"
+                         alt="<?= $this->nettoyer($chocolat['nom']) ?>">
+                  </a>
+                </div>
+              <?= ($index % 4 == 3 ? '</div>' : '' ) ?>
+            <?php endforeach; ?>
+          <?php else : ?>
+            <h3>
+                Aucun chocolat ne correspond à la categorie <?= $this->nettoyer($currentCategorie['titre']) ?>
+            </h3>
+          <?php endif; ?>
+        <?php else : ?>
+          <div class="alert alert-warning">
+            Sélectionnez une catégorie pour afficher les chocolats associés.
           </div>
-        <?php endforeach; ?>
+        <?php endif; ?>
       </div>
     </div>
 </div>

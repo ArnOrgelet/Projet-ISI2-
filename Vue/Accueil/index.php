@@ -9,7 +9,7 @@
   <!--
     <li><a href="#">Parent</a> <span class="divider"></span></li>
   -->
-  <li class="active glyphicon glyphicon-home"><span class="glyphicon glyphicon-home"> Accueil</span></li>
+  <li class="active"><span class="glyphicon glyphicon-home"> Accueil</span></li>
 </ul>
 
 <div class="row row-offcanvas row-offcanvas-left">
