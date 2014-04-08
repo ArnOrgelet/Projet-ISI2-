@@ -34,7 +34,7 @@
         <?php if(isset($currentCategorie['titre'])) : ?>
           <?php if($chocolats->rowCount() > 0) : ?>
             <br>
-
+            <?php $index = 0; ?>
             <?php foreach ($chocolats as $index => $chocolat): ?>
               <?= ($index % 4 == 0 ? '<div class="row">' : '' ) ?>
                 <div class="col-xs-6 col-md-3">
@@ -46,6 +46,7 @@
                 </div>
               <?= ($index % 4 == 3 ? '</div>' : '' ) ?>
             <?php endforeach; ?>
+            <?= ($index % 4 != 3 ? '</div>' : '' ) ?>
           <?php else : ?>
             <h3>
                 Aucun chocolat ne correspond à la categorie <?= $this->nettoyer($currentCategorie['titre']) ?>

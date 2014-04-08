@@ -5,11 +5,7 @@
 
 <!-- Fil d'Ariane -->
 <ul class="breadcrumb">
-  <!-- Parent -->
-  <!--
-    <li><a href="#">Parent</a> <span class="divider"></span></li>
-  -->
-  <li class="active"><span class="glyphicon glyphicon-home"> Accueil</span></li>
+    <li><span class="glyphicon glyphicon-home"></span> Accueil <span class="divider"></span></li>
 </ul>
 
 <div class="row row-offcanvas row-offcanvas-left">
