@@ -2,7 +2,7 @@
     if(isset($currentCategorie['titre']))
         $this->titre = $this->nettoyer($currentCategorie['titre']);
     else
-        $this->titre = 'Categories de chocolat';
+        $this->titre = 'Categorie introuvable';
 ?>
 
 
@@ -13,7 +13,7 @@
     <?php if(isset($currentCategorie['titre'])) : ?>
         <li class="active"><span class="glyphicon glyphicon-leaf"></span> <?= $this->nettoyer($currentCategorie['titre']) ?></li>
     <?php else : ?>
-        <li class="active"><span class="glyphicon glyphicon-leaf"></span> Categories</li>
+        <li class="active"><span class="glyphicon glyphicon-leaf"></span> Categorie introuvable</li>
     <?php endif; ?>
 </ul>
 
@@ -38,7 +38,7 @@
             <?php foreach ($chocolats as $index => $chocolat): ?>
               <?= ($index % 4 == 0 ? '<div class="row">' : '' ) ?>
                 <div class="col-xs-6 col-md-3">
-                  <a href="#" class="thumbnail">
+                  <a href="navigation/detail/<?= $this->nettoyer($chocolat['id']) ?>" class="thumbnail">
                     <img src="Contenu/Images/Chocolats/<?= $this->nettoyer($chocolat['image_src']) ?>.jpg"
                          title="<?= $this->nettoyer($chocolat['nom']) ?>"
                          alt="<?= $this->nettoyer($chocolat['nom']) ?>">

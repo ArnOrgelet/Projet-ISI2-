@@ -20,7 +20,8 @@ class Chocolat extends Modele {
   public function getChocolat($idChocolat) {
     $sql = 'select CHO_ID as id, CHO_NOM as nom,'
       . ' CHO_DATEAJOUT as date, CHO_PRIX as prix,'
-      . ' CHO_IMAGE as image_src'
+      . ' CHO_IMAGE as image_src, CAT_ID as categorie_id,'
+      . ' CHT_ID as chocolatier_id'
       . ' from T_CHOCOLAT'
       . ' WHERE CHO_ID=?';
     $chocolat = $this->executerRequete($sql, array($idChocolat));
