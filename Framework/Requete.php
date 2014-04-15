@@ -2,11 +2,15 @@
 
 class Requete {
 
+  // Objet session associé à la requête
+  private $session;
+    
   // paramètres de la requête
   private $parametres;
 
   public function __construct($parametres) {
     $this->parametres = $parametres;
+    $this->session = new Session();
   }
 
   // Renvoie vrai si le paramètre existe dans la requête
@@ -22,5 +26,11 @@ class Requete {
     }
     else
       throw new Exception("Paramètre '$nom' absent de la requête");
+  }
+  
+
+  // Renvoie l'objet session associé à la requête
+  public function getSession() {
+    return $this->session;
   }
 }
