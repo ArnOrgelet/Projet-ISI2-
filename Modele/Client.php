@@ -25,7 +25,7 @@ class Client extends Modele {
       . ' CLI_CP as cp, CLI_VILLE as ville,'
       . ' CLI_COURRIEL as courriel, CLI_MDP as mdp'
       . ' from T_CLIENT'
-      . ' WHERE CLI_COURRIEL=? AND CLI_MDP=?';
+      . ' where CLI_COURRIEL=? AND CLI_MDP=?';
     $client = $this->executerRequete($sql, array($courriel, $mdp));
     
     if ($client->rowCount() == 1)
@@ -35,11 +35,11 @@ class Client extends Modele {
   }
 
   // Ajoute un client
-  public function addClient($nom, $prenom, $adresse, $cp, $ville, $courriel, $mdp) {
+  public function ajouterClient($nom, $prenom, $adresse, $cp, $ville, $courriel, $mdp) {
     $sql = 'insert into T_CLIENT'
       . ' (CLI_NOM, CLI_PRENOM, CLI_ADRESSE, CLI_CP,'
       . ' CLI_VILLE, CLI_COURRIEL, CLI_MDP)'
-      . ' VALUES (?,?,?,?,?,?,?)';
+      . ' values (?,?,?,?,?,?,?)';
     $this->executerRequete($sql, array($nom,
                                     $prenom,
                                     $adresse,
@@ -47,5 +47,22 @@ class Client extends Modele {
                                     $ville,
                                     $courriel,
                                     $mdp));
+  }
+  
+  // Modifie un client
+  public function modifierClient($idClient, $nom, $prenom, $adresse, $cp, $ville, $courriel, $mdp) {
+    $sql = 'update T_CLIENT set'
+      . ' CLI_NOM = ?, CLI_PRENOM = ?, CLI_ADRESSE = ?, CLI_CP = ?,'
+      . ' CLI_VILLE = ?, CLI_COURRIEL = ?, CLI_MDP = ?'
+      . ' where CLI_ID = ?';
+    $this->executerRequete($sql, array($nom,
+                                    $prenom,
+                                    $adresse,
+                                    $cp,
+                                    $ville,
+                                    $courriel,
+                                    $mdp,
+                                    // where
+                                    $idClient));
   }
 }
