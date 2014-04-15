@@ -13,14 +13,25 @@ class Client extends Modele {
       . ' from T_CLIENT'
       . ' WHERE CLI_ID=?';
     $client = $this->executerRequete($sql, array($idClient));
-    return $client;
+    
+    if ($client->rowCount() == 1)
+      return $client->fetch();  // Accès à la première ligne de résultat
+    else
+      throw new Exception("Aucun client ne correspond à l'identifiant '$idClient'");
   }
-  public function isValidClientIdenfication($courriel, $mdp) {
-    $sql = 'select count(*) as nb'
+  public function getClientByIdenfication($courriel, $mdp) {
+    $sql = 'select CLI_ID as id, CLI_NOM as nom,'
+      . ' CLI_PRENOM as prenom, CLI_ADRESSE as adresse,'
+      . ' CLI_CP as cp, CLI_VILLE as ville,'
+      . ' CLI_COURRIEL as courriel, CLI_MDP as mdp'
       . ' from T_CLIENT'
       . ' WHERE CLI_COURRIEL=? AND CLI_MDP=?';
-    $nb = $this->executerRequete($sql, array($courriel, $mdp));
-    return $nb['nb'] == 1;
+    $client = $this->executerRequete($sql, array($courriel, $mdp));
+    
+    if ($client->rowCount() == 1)
+      return $client->fetch(); // Identification valide -> retour du client
+    else
+      return null;
   }
 
   // Ajoute un client
@@ -28,13 +39,13 @@ class Client extends Modele {
     $sql = 'insert into T_CLIENT'
       . ' (CLI_NOM, CLI_PRENOM, CLI_ADRESSE, CLI_CP,'
       . ' CLI_VILLE, CLI_COURRIEL, CLI_MDP)'
-      . ' VALUES(?,?,?,?,?,?,?)';
-    $chocolat = $this->executerRequete($sql, array($nom,
-                                                $prenom,
-                                                $adresse,
-                                                $cp,
-                                                $ville,
-                                                $courriel,
-                                                $mdp));
+      . ' VALUES (?,?,?,?,?,?,?)';
+    $this->executerRequete($sql, array($nom,
+                                    $prenom,
+                                    $adresse,
+                                    $cp,
+                                    $ville,
+                                    $courriel,
+                                    $mdp));
   }
 }
