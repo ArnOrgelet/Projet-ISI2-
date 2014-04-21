@@ -9,7 +9,7 @@ class Client extends Modele {
     $sql = 'select CLI_ID as id, CLI_NOM as nom,'
       . ' CLI_PRENOM as prenom, CLI_ADRESSE as adresse,'
       . ' CLI_CP as cp, CLI_VILLE as ville,'
-      . ' CLI_COURRIEL as courriel, CLI_MDP as mdp'
+      . ' CLI_COURRIEL as courriel'
       . ' from T_CLIENT'
       . ' WHERE CLI_ID=?';
     $client = $this->executerRequete($sql, array($idClient));
@@ -23,7 +23,7 @@ class Client extends Modele {
     $sql = 'select CLI_ID as id, CLI_NOM as nom,'
       . ' CLI_PRENOM as prenom, CLI_ADRESSE as adresse,'
       . ' CLI_CP as cp, CLI_VILLE as ville,'
-      . ' CLI_COURRIEL as courriel, CLI_MDP as mdp'
+      . ' CLI_COURRIEL as courriel'
       . ' from T_CLIENT'
       . ' where CLI_COURRIEL=? AND CLI_MDP=?';
     $client = $this->executerRequete($sql, array($courriel, $mdp));
@@ -32,6 +32,17 @@ class Client extends Modele {
       return $client->fetch(); // Identification valide -> retour du client
     else
       return null;
+  }
+  
+  // Indique si le courriel n'est pas deja assigné à un compte
+  public function isCourrielUnique($courriel) {
+    $sql = 'select CLI_ID as id, CLI_NOM as nom,'
+      . ' CLI_ID as id'
+      . ' from T_CLIENT'
+      . ' WHERE CLI_COURRIEL=?';
+    $client = $this->executerRequete($sql, array($courriel));
+    
+    return ($client->rowCount() == 0);
   }
 
   // Ajoute un client
@@ -47,6 +58,8 @@ class Client extends Modele {
                                     $ville,
                                     $courriel,
                                     $mdp));
+    
+    return $this->getClientByIdenfication($courriel, $mdp);
   }
   
   // Modifie un client

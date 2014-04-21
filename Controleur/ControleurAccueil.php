@@ -13,10 +13,15 @@ class ControleurAccueil extends Controleur
     $this->categorie = new Categorie();
   }
 
-  // Affiche la liste de toutes les categories
   public function index()
   {
     $categories = $this->categorie->getCategories();
-    $this->genererVue(array('categories' => $categories));
+    
+    $client = null;
+    if($this->requete->getSession()->existeAttribut('client'))
+        $client = $this->requete->getSession()->getAttribut('client');
+    
+    $this->genererVue(array('categories' => $categories,
+        'client' => $client));
   }
 }

@@ -19,7 +19,6 @@ class ControleurNavigation extends Controleur
     $this->chocolatier = new Chocolatier();
   }
 
-  // Affiche la liste de toutes les categories
   public function index()
   {
     $categorie = null;
@@ -39,10 +38,15 @@ class ControleurNavigation extends Controleur
         { }
     }
     
+    $client = null;
+    if($this->requete->getSession()->existeAttribut('client'))
+        $client = $this->requete->getSession()->getAttribut('client');
+    
     $this->genererVue(array(
                         'currentCategorie' => $categorie,
                         'categories' => $categories,
-                        'chocolats' => $chocolats));
+                        'chocolats' => $chocolats,
+                        'client' => $client));
   }
   
   public function detail()
@@ -66,10 +70,15 @@ class ControleurNavigation extends Controleur
         { }
     }
     
+    $client = null;
+    if($this->requete->getSession()->existeAttribut('client'))
+        $client = $this->requete->getSession()->getAttribut('client');
+    
     $this->genererVue(array(
                         'categories' => $categories,
                         'currentCategorie' => $categorie,
                         'chocolat' => $chocolat,
-                        'chocolatier' => $chocolatier));
+                        'chocolatier' => $chocolatier,
+                        'client' => $client));
   }
 }

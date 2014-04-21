@@ -25,41 +25,10 @@
 	</head>
 	<body>
 		
-            <!-- Bandeau -->
-            <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-	      <div class="container">
-	        <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Afficher navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-	          <!-- Titre sur le bandeau -->
-	          <a class="navbar-brand" href="<?= $racineWeb ?>">Le Jardin Du Chocolat</a>
-                  
-                  
-	        </div>
-                <div class="navbar-collapse collapse">
-                  <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
-                </div>
-	      </div>
-	    </div>
 	
-            <!-- Partie inférieure au bandeau -->
-	    <div class="container">
 	    
-              <?= $contenu ?>
+        <?= $contenu ?>
 	
-              <!-- Séparateur -->
-	      <hr>
-	
-              <!-- Pied de page -->
-	      <footer>
-	        <p>&copy; Castex-Orgelet 2014</p>
-	      </footer>
-	
-	    </div>
     
 		<!-- JQuery -->
         <script src="Librairies/js/jquery.min.js"></script>

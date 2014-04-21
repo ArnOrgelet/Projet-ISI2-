@@ -1,6 +1,7 @@
 <?php $this->titre = "Accueil"; ?>
 
 
+<?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
 
 <!-- Fil d'Ariane -->
@@ -35,3 +36,5 @@
       </div>
     </div>
 </div>
+
+<?php include_once('Vue/_Commun/bandeauBas.php'); ?>
