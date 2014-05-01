@@ -3,25 +3,13 @@
 
 <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
-<?php if (isset($msgSucces)) : ?>
-    <!-- Message de réussite -->
-    <div class="alert alert-success alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Confirmation !</strong> <?= $this->nettoyer($msgSucces) ?>
-    </div>
-<?php endif; ?>
+<?php include_once('Vue/_Commun/succesMessagePanel.php'); ?>
+<?php include_once('Vue/_Commun/erreurMessagePanel.php'); ?>
 
-<?php if (isset($msgErreur)) : ?>
-    <!-- Message d'erreur -->
-    <div class="alert alert-danger alert-dismissable">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>Erreur !</strong> <?= $this->nettoyer($msgErreur) ?>
-    </div>
-<?php endif; ?>
 
 <?php if (isset($redirect['time']) && isset($redirect['destination']) && $redirect['time'] > 0) : ?>
     <!-- Redirection -->
-    <meta http-equiv="refresh" content="<?= $redirect['time'] ?>; URL=<?= $redirect['destination'] ?>">
+    <meta http-equiv="refresh" content="<?= $redirect['time'] ?>; URL='<?= $redirect['destination'] ?>'">
     <div class="alert alert-warning">
         <strong>Redirection !</strong> Vous allez être redirigés vers la page d'accueil dans <?= $redirect['time'] ?> seconde<?= ($redirect['time'] > 1) ? 's' : '' ?>.
     </div>

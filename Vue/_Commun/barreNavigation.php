@@ -27,11 +27,11 @@
                     </a>
                     <ul class="dropdown-menu">
                         <?php if(isset($client)) : /* Connecté */ ?>
-                            <li><a href="">Mes informations</a></li>
+                            <li><a href="Client"><span class="glyphicon glyphicon-pencil"></span> Mes informations</a></li>
                             <li class="divider"></li>
-                            <li><a href="Connexion/Deconnecter">Déconnexion</a></li>
+                            <li><a href="Connexion/Deconnecter"><span class="glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
                         <?php else : /* Non connecté */ ?>
-                            <li><a href="Connexion">Connexion/Inscription</a></li>
+                            <li><a href="Connexion"><span class="glyphicon glyphicon-log-in"></span> Connexion/Inscription</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>

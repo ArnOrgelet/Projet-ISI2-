@@ -1,11 +1,11 @@
 <?php
 
-require_once 'Framework/Controleur.php';
+require_once 'Controleur/ControleurSession.php';
 require_once 'Modele/Categorie.php';
 require_once 'Modele/Chocolat.php';
 require_once 'Modele/Chocolatier.php';
 
-class ControleurNavigation extends Controleur
+class ControleurNavigation extends ControleurSession
 {
     
   private $categorie;
@@ -38,15 +38,10 @@ class ControleurNavigation extends Controleur
         { }
     }
     
-    $client = null;
-    if($this->requete->getSession()->existeAttribut('client'))
-        $client = $this->requete->getSession()->getAttribut('client');
-    
     $this->genererVue(array(
                         'currentCategorie' => $categorie,
                         'categories' => $categories,
-                        'chocolats' => $chocolats,
-                        'client' => $client));
+                        'chocolats' => $chocolats));
   }
   
   public function detail()
@@ -70,15 +65,10 @@ class ControleurNavigation extends Controleur
         { }
     }
     
-    $client = null;
-    if($this->requete->getSession()->existeAttribut('client'))
-        $client = $this->requete->getSession()->getAttribut('client');
-    
     $this->genererVue(array(
                         'categories' => $categories,
                         'currentCategorie' => $categorie,
                         'chocolat' => $chocolat,
-                        'chocolatier' => $chocolatier,
-                        'client' => $client));
+                        'chocolatier' => $chocolatier));
   }
 }

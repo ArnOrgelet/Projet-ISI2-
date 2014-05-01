@@ -1,9 +1,9 @@
 <?php
 
-require_once 'Framework/Controleur.php';
+require_once 'Controleur/ControleurSession.php';
 require_once 'Modele/Categorie.php';
 
-class ControleurAccueil extends Controleur
+class ControleurAccueil extends ControleurSession
 {
 
   private $categorie;
@@ -17,11 +17,6 @@ class ControleurAccueil extends Controleur
   {
     $categories = $this->categorie->getCategories();
     
-    $client = null;
-    if($this->requete->getSession()->existeAttribut('client'))
-        $client = $this->requete->getSession()->getAttribut('client');
-    
-    $this->genererVue(array('categories' => $categories,
-        'client' => $client));
+    $this->genererVue(array('categories' => $categories));
   }
 }

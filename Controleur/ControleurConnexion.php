@@ -35,7 +35,7 @@ class ControleurConnexion extends Controleur
             { // Bien identifié
                 $this->requete->getSession()->setAttribut('client', $client);
                 $this->genererVue(array('msgSucces' => 'Vous êtes à présent bien connecté.',
-                        'redirect' => array('time' => 3, 'destination' => 'Accueil')));
+                        'redirect' => array('time' => 3, 'destination' => $this->getRedirection('Accueil'))));
             }
         }
         else
@@ -48,7 +48,7 @@ class ControleurConnexion extends Controleur
     {
         $this->requete->getSession()->detruire();
         $this->genererVue(array('msgSucces' => 'Vous avez bien été déconnecté(e).',
-                    'redirect' => array('time' => 3, 'destination' => 'Accueil')));
+                    'redirect' => array('time' => 3, 'destination' => $this->getRedirection('Accueil'))));
     }
 
     public function inscrire()
@@ -77,7 +77,7 @@ class ControleurConnexion extends Controleur
                 $this->requete->getSession()->setAttribut('client', $client);
                 
                 $this->genererVue(array('msgSucces' => 'L\'inscription s\'est faite avec succès.',
-                    'redirect' => array('time' => 3, 'destination' => 'Accueil')));
+                    'redirect' => array('time' => 3, 'destination' => $this->getRedirection('Accueil'))));
             }
             else
             { // Courriel deja utilisé

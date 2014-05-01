@@ -8,8 +8,8 @@ class Client extends Modele {
   public function getClient($idClient) {
     $sql = 'select CLI_ID as id, CLI_NOM as nom,'
       . ' CLI_PRENOM as prenom, CLI_ADRESSE as adresse,'
-      . ' CLI_CP as cp, CLI_VILLE as ville,'
-      . ' CLI_COURRIEL as courriel'
+      . ' CLI_CP as codePostal, CLI_VILLE as ville,'
+      . ' CLI_COURRIEL as courriel, CLI_MDP as mdp'
       . ' from T_CLIENT'
       . ' WHERE CLI_ID=?';
     $client = $this->executerRequete($sql, array($idClient));
@@ -22,7 +22,7 @@ class Client extends Modele {
   public function getClientByIdenfication($courriel, $mdp) {
     $sql = 'select CLI_ID as id, CLI_NOM as nom,'
       . ' CLI_PRENOM as prenom, CLI_ADRESSE as adresse,'
-      . ' CLI_CP as cp, CLI_VILLE as ville,'
+      . ' CLI_CP as codePostal, CLI_VILLE as ville,'
       . ' CLI_COURRIEL as courriel'
       . ' from T_CLIENT'
       . ' where CLI_COURRIEL=? AND CLI_MDP=?';

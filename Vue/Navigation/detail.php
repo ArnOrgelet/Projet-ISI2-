@@ -58,7 +58,7 @@
 
                     <div>
                         <h2>
-                            <strong>Prix: <?= $this->nettoyer($chocolat['prix']) ?>&euro;</strong>
+                            <strong>Prix: <?= number_format($this->nettoyer($chocolat['prix']), 2) ?>&euro;</strong>
                         </h2>
                     </div>	
 

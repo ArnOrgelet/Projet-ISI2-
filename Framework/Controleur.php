@@ -37,14 +37,54 @@ abstract class Controleur
   // Oblige les classes dérivées à implémenter cette action par défaut
   public abstract function index();
 
-  // Génère la vue associée au contrôleur courant
-  protected function genererVue($donneesVue = array())
+/**
+ * Génère la vue associée au contrôleur courant
+ * 
+ * @param array $donneesVue Données nécessaires pour la génération de la vue
+ * @param string $action Action associée à la vue (permet à un contrôleur de générer une vue pour une action spécifique)
+ */
+  protected function genererVue($donneesVue = array(), $action = null)
   {
-    // Détermination du nom du fichier vue à partir du nom du contrôleur actuel
+    // Utilisation de l'action actuelle par défaut
+    $actionVue = $this->action;
+    if ($action != null) {
+        // Utilisation de l'action passée en paramètre
+        $actionVue = $action;
+    }
+    // Utilisation du nom du contrôleur actuel
     $classeControleur = get_class($this);
-    $controleur = str_replace("Controleur", "", $classeControleur);
+    $controleurVue = str_replace("Controleur", "", $classeControleur);
+
+
     // Instanciation et génération de la vue
-    $vue = new Vue($this->action, $controleur);
+    $vue = new Vue($actionVue, $controleurVue);
     $vue->generer($donneesVue);
   }
+
+
+/**
+ * Effectue une redirection vers un contrôleur et une action spécifiques
+ * 
+ * @param string $controleur Contrôleur
+ * @param type $action Action Action
+ */
+  protected function rediriger($controleur, $action = null)
+  {
+    // Redirection vers l'URL /racine_site/controleur/action
+    header("Location:" . getRedirection($controleur, $action));
+  }
+
+/**
+ * Effectue une redirection vers un contrôleur et une action spécifiques
+ * 
+ * @param string $controleur Contrôleur
+ * @param type $action Action Action
+ */
+  protected function getRedirection($controleur, $action = null)
+  {
+    $racineWeb = Configuration::get("racineWeb", "/");
+    return $racineWeb . $controleur . "/" . $action;
+  }
+
+
 }

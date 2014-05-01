@@ -55,4 +55,4 @@ INSERT INTO `lejardinduchocolat`.`t_chocolatier` (`CHT_ID`, `CHT_NOM`, `CHT_ADRE
 
 INSERT INTO `lejardinduchocolat`.`t_chocolat` (`CHO_ID`, `CHO_NOM`, `CHO_DATEAJOUT`, `CHO_PRIX`, `CHO_IMAGE`, `CAT_ID`, `CHT_ID`) VALUES (NULL, 'Le Temps d''un soir', '2014-02-12', '37.90', 'temps_soir', '1', '2'), (NULL, 'Le Temps d''un café', '2014-02-04', '37.90', 'temps_café', '1', '2'), (NULL, 'Grands Eclats 235g', '2014-02-08', '16.90', 'grands_eclats', '3', '3'), (NULL, 'Ronde de Mendiants 250g', '2014-02-16', '20.90', 'ronde_mendiants', '1', '2'), (NULL, 'Ronde de Tuiles et amandes 320g', '2014-02-10', '24.20', 'ronde_tuiles', '2', '1');
 
-INSERT INTO `t_client` (`CLI_ID`, `CLI_NOM`, `CLI_PRENOM`, `CLI_ADRESSE`, `CLI_CP`, `CLI_VILLE`, `CLI_COURRIEL`, `CLI_MDP`) VALUES (1, 'Wonka', 'Willy', '164 La chocolaterie', '69100', 'Lyon', 'willy.wonka@choco.fr', '123465');
+INSERT INTO `t_client` (`CLI_ID`, `CLI_NOM`, `CLI_PRENOM`, `CLI_ADRESSE`, `CLI_CP`, `CLI_VILLE`, `CLI_COURRIEL`, `CLI_MDP`) VALUES (1, 'Wonka', 'Willy', '164 La chocolaterie', '69100', 'Lyon', 'willy.wonka@choco.fr', '123456');
