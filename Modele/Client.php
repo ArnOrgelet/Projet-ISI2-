@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Framework/Modele.php';
-
 class Client extends Modele {
 
   // Renvoie les informations sur un client

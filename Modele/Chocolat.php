@@ -1,7 +1,6 @@
 <?php
  
 require_once 'Framework/Modele.php';
-
 class Chocolat extends Modele {
 
   // Renvoie la liste des chocolats du blog

@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Framework/Modele.php';
-
 class Categorie extends Modele
 {
 
