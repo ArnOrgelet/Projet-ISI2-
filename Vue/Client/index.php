@@ -1,5 +1,5 @@
 <?php $this->titre = "Informations client"; ?>
-
+ 
 <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
 <?php include_once('Vue/_Commun/succesMessagePanel.php'); ?>

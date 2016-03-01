@@ -12,7 +12,7 @@
       <!-- Titre sur le bandeau -->
       <a class="navbar-brand" href="Accueil">Le Jardin Du Chocolat</a>
     </div>
-     
+    
     <?php if(!isset($bandeauPerso) || $bandeauPerso == true) : ?>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">

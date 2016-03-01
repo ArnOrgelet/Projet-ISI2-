@@ -5,7 +5,6 @@
         $this->titre = 'Categorie introuvable';
 ?>
 
-
 <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
 <!-- Fil d'Ariane -->

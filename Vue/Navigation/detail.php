@@ -7,7 +7,6 @@
 
 <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
-
 <!-- Fil d'Ariane -->
 <ul class="breadcrumb">
     <li><span class="glyphicon glyphicon-home"></span> <a href="accueil">Accueil</a> <span class="divider"></span></li>

@@ -1,6 +1,5 @@
 <?php $this->titre = "Accueil"; ?>
 
-
 <?php include_once('Vue/_Commun/barreNavigation.php'); ?>
 
 
